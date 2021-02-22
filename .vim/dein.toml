@@ -1,0 +1,26 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'AtsushiM/sass-compile.vim'
+
+[[plugins]]
+repo = 'AtsushiM/search-parent.vim'
+
+[[plugins]]
+repo = 'Nequo/vim-allomancer'
