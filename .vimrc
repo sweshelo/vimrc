@@ -129,6 +129,14 @@ let g:lightline = {
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
+
+"引数なしでvimを開いたらNERDTreeを起動、
+"引数ありならNERDTreeは起動せず、引数で渡されたファイルを開く。
+autocmd vimenter * if !argc() | NERDTree | endif
+
+"他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 syntax on
 set t_Co=256
 colorscheme desert
