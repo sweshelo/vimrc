@@ -56,6 +56,10 @@ nmap k gk
 nmap ; :
 nmap <Enter> zA
 nmap <Space>ls :NERDTreeToggle<CR>
+nmap <space>t :tabnew<CR>
+
+" tt でターミナルを開いていい感じの大きさに調整する
+nmap tt :bo term<CR><C-w>w20<C-w>+<c-w>j
 
 " 補完
 set completeopt=menuone,noinsert
