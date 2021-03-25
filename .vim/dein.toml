@@ -24,3 +24,6 @@ repo = 'AtsushiM/search-parent.vim'
 
 [[plugins]]
 repo = 'Nequo/vim-allomancer'
+
+[[plugins]]
+repo = 'tomasr/molokai'

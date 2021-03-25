@@ -143,4 +143,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 syntax on
 set t_Co=256
-colorscheme desert
+colorscheme molokai
