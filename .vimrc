@@ -28,6 +28,7 @@ set tabstop=4
 set showmatch
 set smartindent
 set nofoldenable
+set nocompatible
 
 set title
 set number
@@ -36,7 +37,7 @@ set virtualedit=onemore
 set clipboard=unnamed,autoselect
 set nrformats=
 set whichwrap=b,s,h,l,<,>,[,],~
-set mouse=a
+"set mouse=a
 
 " オレオレ設定
 set cursorline
@@ -49,6 +50,7 @@ imap <c-j> <Down>
 imap <c-h> <left>
 imap <c-k> <up>
 imap <c-l> <right>
+imap  <BS>
 
 nmap <Esc><Esc> :nohlsearch<CR><ESC>
 nmap j gj
@@ -57,9 +59,17 @@ nmap ; :
 nmap <Enter> zA
 nmap <Space>ls :NERDTreeToggle<CR>
 nmap <space>t :tabnew<CR>
+nmap  <BS>
 
 " tt でターミナルを開いていい感じの大きさに調整する
 nmap tt :bo term<CR><C-w>w20<C-w>+<c-w>j
+
+" scss保存時にコンパイル
+function! SassCompile()
+    system('sass '+expand("%")+":"+expand("%:r")+".css")
+    echo('sass %:')
+endfunction
+autocmd! BufWritePost *.scss :call
 
 " 補完
 set completeopt=menuone,noinsert
@@ -143,4 +153,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 syntax on
 set t_Co=256
+
+if has('vim_starting')
+    " カーソル形状
+    let &t_SI .= "\e[6 q"
+endif
+
 colorscheme molokai
