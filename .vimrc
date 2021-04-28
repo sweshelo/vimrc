@@ -56,7 +56,7 @@ nmap <Esc><Esc> :nohlsearch<CR><ESC>
 nmap j gj
 nmap k gk
 nmap ; :
-nmap <Enter> zA
+nmap <Space><Enter> zA
 nmap <Space>ls :NERDTreeToggle<CR>
 nmap <space>t :tabnew<CR>
 nmap  <BS>
@@ -66,10 +66,9 @@ nmap tt :bo term<CR><C-w>w20<C-w>+<c-w>j
 
 " scss保存時にコンパイル
 function! SassCompile()
-    system('sass '+expand("%")+":"+expand("%:r")+".css")
-    echo('sass %:')
+    :!sass %:`echo %|sed 's/scss/css/g'`
 endfunction
-autocmd! BufWritePost *.scss :call
+autocmd! BufWritePost *.scss :call SassCompile()
 
 " 補完
 set completeopt=menuone,noinsert
