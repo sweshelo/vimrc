@@ -60,6 +60,8 @@ nmap <Space><Enter> zA
 nmap <Space>ls :NERDTreeToggle<CR>
 nmap <space>t :tabnew<CR>
 nmap  <BS>
+nmap + <C-a>
+nmap - <C-x>
 
 " tt でターミナルを開いていい感じの大きさに調整する
 nmap tt :bo term<CR><C-w>w20<C-w>+<c-w>j
