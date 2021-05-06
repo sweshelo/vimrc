@@ -68,7 +68,9 @@ nmap tt :bo term<CR><C-w>w20<C-w>+<c-w>j
 
 " scss保存時にコンパイル
 function! SassCompile()
-    :!sass %:`echo %|sed 's/scss/css/g'`
+    if expand("%:r")[0] != '_'
+         :!sass %:`echo %|sed 's/scss/css/g'`
+    endif
 endfunction
 autocmd! BufWritePost *.scss :call SassCompile()
 
@@ -84,6 +86,7 @@ inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=xmlcomplete#CompleteTags
 
 " HTML/XML閉じタグ自動補完
 augroup MyXML
