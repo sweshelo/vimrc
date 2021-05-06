@@ -1,3 +1,3 @@
-cp ./.vimrc ~/
-cp -r ./.vim ~/
-cp commit
+cp .vimrc ~/.vimrc
+cp -r .vim ~/.vim
+cp commit ~/commit
